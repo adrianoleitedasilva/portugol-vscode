@@ -1,0 +1,133 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Portugol",
+  "scopeName": "source.portugol",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords-control" },
+    { "include": "#keywords-other" },
+    { "include": "#types" },
+    { "include": "#constants" },
+    { "include": "#functions-builtin" },
+    { "include": "#numbers" },
+    { "include": "#operators" },
+    { "include": "#identifiers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.portugol",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.portugol",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "patterns": []
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.portugol",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            { "name": "constant.character.escape.portugol", "match": "\\\\." }
+          ]
+        },
+        {
+          "name": "string.quoted.single.portugol",
+          "match": "'(?:[^'\\\\]|\\\\.)?'"
+        }
+      ]
+    },
+    "keywords-control": {
+      "patterns": [
+        {
+          "name": "keyword.control.portugol",
+          "match": "(?i)\\b(se|senao|entao|fimse|para|de|ate|passo|fimpara|enquanto|faca|fimenquanto|repita|escolha|caso|outrocaso|fimescolha|retorne|pare|continue)\\b"
+        }
+      ]
+    },
+    "keywords-other": {
+      "patterns": [
+        {
+          "name": "keyword.other.portugol",
+          "match": "(?i)\\b(algoritmo|fimalgoritmo|programa|inicio|fim|var|funcao|fimfuncao|procedimento|fimprocedimento|leia|escreva|escreval|const|tipo)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.portugol",
+          "match": "(?i)\\b(inteiro|real|logico|caracter|caractere|cadeia|texto|vetor|matriz|registro|booleano|void|nulo)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.portugol",
+          "match": "(?i)\\b(verdadeiro|falso|nulo)\\b"
+        }
+      ]
+    },
+    "functions-builtin": {
+      "patterns": [
+        {
+          "name": "support.function.portugol",
+          "match": "(?i)\\b(abs|arredonde|teto|piso|raiz|potencia|sen|cos|tan|arcsen|arccos|arctan|exp|log|log2|log10|int|pi|aleatorio|resto|modulo|comprimento|compr|maiusculo|maiuscula|minusculo|minuscula|inverte|copia|subcadeia|pos|substitua|apaga|insere|espacos|numerico|converteinteiro|caracter|chr|asc|ord|limpa|pausa|eh_numero|eh_cadeia|eh_logico)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.portugol",
+          "match": "\\b[0-9]+\\.[0-9]+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.portugol",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.logical.portugol",
+          "match": "(?i)\\b(e|ou|nao|xou)\\b"
+        },
+        {
+          "name": "keyword.operator.word.portugol",
+          "match": "(?i)\\b(div|mod)\\b"
+        },
+        {
+          "name": "keyword.operator.assignment.portugol",
+          "match": "<-|:="
+        },
+        {
+          "name": "keyword.operator.comparison.portugol",
+          "match": "<>|<=|>=|<|>|="
+        },
+        {
+          "name": "keyword.operator.arithmetic.portugol",
+          "match": "[+\\-*/^%]"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "name": "variable.other.portugol",
+          "match": "[a-zA-ZÀ-ÿ_][a-zA-ZÀ-ÿ0-9_]*"
+        }
+      ]
+    }
+  }
+}

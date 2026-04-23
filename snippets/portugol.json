@@ -1,0 +1,164 @@
+{
+  "Algoritmo básico": {
+    "prefix": "algoritmo",
+    "body": [
+      "algoritmo \"${1:MeuPrograma}\"",
+      "var",
+      "   ${2:// declare suas variáveis aqui}",
+      "inicio",
+      "   ${0}",
+      "fimalgoritmo"
+    ],
+    "description": "Estrutura básica de um algoritmo Portugol"
+  },
+  "Variável inteiro": {
+    "prefix": "var_inteiro",
+    "body": ["${1:nome} : inteiro"],
+    "description": "Declaração de variável inteira"
+  },
+  "Variável real": {
+    "prefix": "var_real",
+    "body": ["${1:nome} : real"],
+    "description": "Declaração de variável real"
+  },
+  "Variável cadeia": {
+    "prefix": "var_cadeia",
+    "body": ["${1:nome} : cadeia"],
+    "description": "Declaração de variável cadeia (string)"
+  },
+  "Variável lógico": {
+    "prefix": "var_logico",
+    "body": ["${1:nome} : logico"],
+    "description": "Declaração de variável lógica"
+  },
+  "Se simples": {
+    "prefix": "se",
+    "body": [
+      "se ${1:condicao} entao",
+      "   ${0}",
+      "fimse"
+    ],
+    "description": "Estrutura condicional se"
+  },
+  "Se-Senão": {
+    "prefix": "sesenao",
+    "body": [
+      "se ${1:condicao} entao",
+      "   ${2}",
+      "senao",
+      "   ${0}",
+      "fimse"
+    ],
+    "description": "Estrutura condicional se-senão"
+  },
+  "Para": {
+    "prefix": "para",
+    "body": [
+      "para ${1:i} de ${2:1} ate ${3:10} faca",
+      "   ${0}",
+      "fimpara"
+    ],
+    "description": "Estrutura de repetição para"
+  },
+  "Para com passo": {
+    "prefix": "parapasso",
+    "body": [
+      "para ${1:i} de ${2:1} ate ${3:10} passo ${4:1} faca",
+      "   ${0}",
+      "fimpara"
+    ],
+    "description": "Estrutura de repetição para com passo"
+  },
+  "Enquanto": {
+    "prefix": "enquanto",
+    "body": [
+      "enquanto ${1:condicao} faca",
+      "   ${0}",
+      "fimenquanto"
+    ],
+    "description": "Estrutura de repetição enquanto"
+  },
+  "Repita": {
+    "prefix": "repita",
+    "body": [
+      "repita",
+      "   ${0}",
+      "ate ${1:condicao}"
+    ],
+    "description": "Estrutura de repetição repita-até"
+  },
+  "Escolha": {
+    "prefix": "escolha",
+    "body": [
+      "escolha ${1:variavel}",
+      "   caso ${2:1}:",
+      "      ${3}",
+      "   caso ${4:2}:",
+      "      ${5}",
+      "   outrocaso:",
+      "      ${0}",
+      "fimescolha"
+    ],
+    "description": "Estrutura de seleção múltipla escolha-caso"
+  },
+  "Função": {
+    "prefix": "funcao",
+    "body": [
+      "funcao ${1:nome}(${2:parametros}) : ${3:inteiro}",
+      "var",
+      "   ${4:// variáveis locais}",
+      "inicio",
+      "   ${0}",
+      "   retorne ${5:resultado}",
+      "fimfuncao"
+    ],
+    "description": "Declaração de função"
+  },
+  "Procedimento": {
+    "prefix": "procedimento",
+    "body": [
+      "procedimento ${1:nome}(${2:parametros})",
+      "var",
+      "   ${3:// variáveis locais}",
+      "inicio",
+      "   ${0}",
+      "fimprocedimento"
+    ],
+    "description": "Declaração de procedimento"
+  },
+  "Leia": {
+    "prefix": "leia",
+    "body": ["leia(${1:variavel})"],
+    "description": "Leitura de valor"
+  },
+  "Escreva": {
+    "prefix": "escreva",
+    "body": ["escreva(${1:\"mensagem\"})"],
+    "description": "Escrita sem nova linha"
+  },
+  "Escreval": {
+    "prefix": "escreval",
+    "body": ["escreval(${1:\"mensagem\"})"],
+    "description": "Escrita com nova linha"
+  },
+  "Vetor": {
+    "prefix": "vetor",
+    "body": ["${1:nome} : vetor[${2:1}..${3:10}] de ${4:inteiro}"],
+    "description": "Declaração de vetor"
+  },
+  "Matriz": {
+    "prefix": "matriz",
+    "body": ["${1:nome} : vetor[${2:1}..${3:3}, ${4:1}..${5:3}] de ${6:inteiro}"],
+    "description": "Declaração de matriz"
+  },
+  "Hello World": {
+    "prefix": "helloworld",
+    "body": [
+      "algoritmo \"OlaMundo\"",
+      "inicio",
+      "   escreval(\"Olá, Mundo!\")",
+      "fimalgoritmo"
+    ],
+    "description": "Programa Hello World em Portugol"
+  }
+}

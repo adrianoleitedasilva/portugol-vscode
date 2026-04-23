@@ -1,0 +1,133 @@
+{
+  "name": "portugol-vscode",
+  "displayName": "Portugol VSCode",
+  "description": "Suporte à linguagem Portugol no VSCode: syntax highlighting, snippets e execução de programas.",
+  "version": "0.1.0",
+  "publisher": "adriano-silva",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adriano-silva/portugol-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/adriano-silva/portugol-vscode/issues"
+  },
+  "homepage": "https://github.com/adriano-silva/portugol-vscode#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Programming Languages", "Snippets"],
+  "keywords": ["portugol", "algoritmos", "pseudocode", "portugol studio"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "portugol",
+        "aliases": ["Portugol", "portugol"],
+        "extensions": [".por", ".portugol"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "portugol",
+        "scopeName": "source.portugol",
+        "path": "./syntaxes/portugol.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "portugol",
+        "path": "./snippets/portugol.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "portugol.run",
+        "title": "Portugol: Executar Programa",
+        "icon": "$(play)"
+      },
+      {
+        "command": "portugol.stop",
+        "title": "Portugol: Parar Execução",
+        "icon": "$(stop-circle)"
+      },
+      {
+        "command": "portugol.newFile",
+        "title": "Portugol: Novo Arquivo",
+        "icon": "$(new-file)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "portugol.run",
+          "when": "resourceLangId == portugol && !portugol.running",
+          "group": "navigation@1"
+        },
+        {
+          "command": "portugol.stop",
+          "when": "resourceLangId == portugol && portugol.running",
+          "group": "navigation@1"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "portugol.run",
+          "when": "resourceLangId == portugol",
+          "group": "portugol@1"
+        },
+        {
+          "command": "portugol.stop",
+          "when": "resourceLangId == portugol && portugol.running",
+          "group": "portugol@2"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "portugol.run",
+        "key": "F5",
+        "when": "editorLangId == portugol"
+      },
+      {
+        "command": "portugol.stop",
+        "key": "shift+F5",
+        "when": "editorLangId == portugol"
+      }
+    ],
+    "configuration": {
+      "title": "Portugol",
+      "properties": {
+        "portugol.interpreterPath": {
+          "type": "string",
+          "default": "",
+          "description": "Caminho para o executável do Portugol Studio CLI (deixe vazio para usar o interpretador embutido)."
+        },
+        "portugol.showOutputOnRun": {
+          "type": "boolean",
+          "default": true,
+          "description": "Mostrar painel de saída automaticamente ao executar."
+        },
+        "portugol.clearOutputOnRun": {
+          "type": "boolean",
+          "default": true,
+          "description": "Limpar saída anterior ao executar novamente."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^2.22.0"
+  }
+}

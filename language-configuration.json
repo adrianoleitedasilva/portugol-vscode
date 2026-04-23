@@ -1,0 +1,36 @@
+{
+  "comments": {
+    "lineComment": "//",
+    "blockComment": ["/*", "*/"]
+  },
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
+  ],
+  "autoClosingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"" },
+    { "open": "'", "close": "'" }
+  ],
+  "surroundingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""],
+    ["'", "'"]
+  ],
+  "wordPattern": "[a-zA-ZÀ-ÿ_][a-zA-ZÀ-ÿ0-9_]*",
+  "indentationRules": {
+    "increaseIndentPattern": "^\\s*\\b(inicio|entao|faca|senao|caso|outrocaso)\\b",
+    "decreaseIndentPattern": "^\\s*\\b(fimalgoritmo|fimfuncao|fimprocedimento|fimenquanto|fimpara|fimse|fimescolha|caso|outrocaso|fim)\\b"
+  },
+  "onEnterRules": [
+    {
+      "beforeText": "\\b(entao|faca|senao|inicio)\\b\\s*$",
+      "action": { "indent": "indent" }
+    }
+  ]
+}

@@ -125,7 +125,7 @@ Se quiser usar o Portugol Studio CLI como backend (para suporte a recursos avan�
 ## Desenvolvimento
 
 ```bash
-git clone https://github.com/adriano-silva/portugol-vscode
+git clone https://github.com/adrianoleitedasilvasilva/portugol-vscode
 cd portugol-vscode
 npm install
 npm run compile
@@ -138,9 +138,3 @@ Para empacotar:
 ```bash
 npm run package
 ```
-
----
-
-## Licença
-
-MIT © Adriano da Silva
